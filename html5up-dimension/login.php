@@ -16,6 +16,7 @@ session_start();
                       $row = mysqli_fetch_array($result);
 
                       $_SESSION["uname"] = $row["user"];
+                      $_SESSION["userID"] = $row["userID"];
                       //$_SESSION["User"] = $row["Firstname"]." ".$row["Lastname"];
                       $_SESSION["typeUser"] = $row["typeUser"];
 
@@ -27,12 +28,12 @@ session_start();
 
                       if ($_SESSION["typeUser"]=="อาจารย์"){  //ถ้าเป็น อาจารย์ ให้กระโดดไปหน้า user_page.php
 
-                        Header("Location: userpage.php");
+                        Header("Location: teacherpage.php");
 
                       }
                       if ($_SESSION["typeUser"]=="ผู้อำนวยการ"){  //ถ้าเป็น ผู้อำนวยการ ให้กระโดดไปหน้า user_page.php
 
-                        Header("Location: userpage.php");
+                        Header("Location: ceopage.php");
 
                       }
 

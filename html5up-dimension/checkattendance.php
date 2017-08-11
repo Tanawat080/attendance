@@ -44,25 +44,8 @@ if (!$_SESSION["uname"]){  //check session
         </table>
     </div> <!-- จบล็อคเอ้าท์ -->
 <br><br>
-	<center>
-		<!-- <img src="images/ksp1.png"> -->
-		<h2> KSP Checking </h2>
-		<h3>อาจารย์ที่ปรึกษา</h3>
-		<hr><br>
-		<div class="im">
-	<a href="checkattendance.php" ><img src="images/pic01.jpg" width="200" height="75"  ></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	<br><br>
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	<br><br>
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="google.com"><img src="#" width="200" height="75" border='1'></a>
-</div>
+<div align="right">
+	<a href="addsubject.php">+ เพิ่มรายวิชา</a>
 </div>
 	</body>
 

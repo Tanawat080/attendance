@@ -11,6 +11,7 @@ if (!$_SESSION["uname"]){  //check session
 		<title>KSP CHECKING</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
 	</head>
@@ -44,26 +45,32 @@ if (!$_SESSION["uname"]){  //check session
         </table>
     </div> <!-- จบล็อคเอ้าท์ -->
 <br><br>
-	<center>
-		<!-- <img src="images/ksp1.png"> -->
-		<h2> KSP Checking </h2>
-		<h3>อาจารย์ที่ปรึกษา</h3>
-		<hr><br>
-		<div class="im">
-	<a href="checkattendance.php" ><img src="images/pic01.jpg" width="200" height="75"  ></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	<br><br>
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	<br><br>
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="google.com"><img src="#" width="200" height="75" border='1'></a>
-</div>
-</div>
+<form method="post" action="confirmSubject.php">
+			<div class="col-xs-4">
+        <label for="ex3">รหัสวิชา</label>
+        <input class="form-control"  type="text">
+				<label for="ex3">วิชา</label>
+				<input class="form-control"  type="text">
+				<label for="ex3">ห้องเรียน</label>
+				<select class="form-control" name="class" style="width: 200px">
+					<option value="">เลือกห้องเรียน</option>
+						<?php
+							include ("connectDB.php");
+							$strSQL = mysqli_query($mysqli,"SELECT * FROM class");
+							//$objResult = mysqli_fetch_array($strSQL);
+									while($objResult = mysqli_fetch_array($strSQL)){
+						?>
+					<option value="<?php echo $objResult["classID"];?>"><?php echo "ม.".$objResult["class"];?></option>
+			 <?php
+			 }
+			 ?>
+		 </select> <br>
+				<button type="submit" class="btn btn-default">ตกลง</button>
+
+			</div>
+</form>
+
+
 	</body>
 
 </html>
