@@ -97,7 +97,7 @@ $i=$i+1;
 
 ?>
 
-</table><br>
+</table></div><br>
 <input class="form-control"  type="hidden" name="hdLine" value="<?php echo $i-1; ?>">
 <div class="container"align="center">
   <label >หมายเหตุ:</label>

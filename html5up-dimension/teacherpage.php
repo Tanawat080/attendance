@@ -11,7 +11,7 @@ if (!$_SESSION["uname"]){  //check session
 		<title>KSP CHECKING</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 
 	</head>
 	<style>
@@ -30,16 +30,16 @@ if (!$_SESSION["uname"]){  //check session
 	}
 	</style>
 <div class="abcd">
-	<body background="/images/bg.jpg">
+	<body background="images/bg.jpg">
 <!-- ล็อคเอ้าท์ -->
-    <div align="right" class="a" ><br>
-      <table border="1">
+    <div align="right" class="a" >
+      <table border="1" style="background-color:#E6E6FA" >
       		<td>
     		  <center> ลงชื่อเข้าใช้โดยรหัส :
     			<?php echo($_SESSION['userID']);?><br>
           ประเภทผู้ใช้งาน : <?php echo($_SESSION['typeUser']);?>
     			<?php //session_destroy();?>
-    			<a href="logout.php"><font color="#CC0000">ออกจากระบบ</font></a></center>
+    			<a href="logout.php">ออกจากระบบ</a></center>
         </td>
         </table>
     </div> <!-- จบล็อคเอ้าท์ -->
@@ -50,6 +50,7 @@ if (!$_SESSION["uname"]){  //check session
 		<h3>อาจารย์ที่ปรึกษา</h3>
 		<hr><br>
 		<div class="im">
+<<<<<<< HEAD
 <<<<<<< HEAD
 		<a href="#" ><img src="images/image001.png" width="200" height="75"  ></a>	&nbsp;&nbsp;&nbsp;
 		<a href="#"><img src="images/image002.png" width="200" height="75" ></a>	&nbsp;&nbsp;&nbsp;
@@ -75,6 +76,20 @@ if (!$_SESSION["uname"]){  //check session
 	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
 	<a href="google.com"><img src="#" width="200" height="75" border='1'></a>
 >>>>>>> parent of 68161c6... no message
+=======
+	<a href="checkattendance.php" ><img src="images/image001.png" width="200" height="75"  ></a>	&nbsp;&nbsp;&nbsp;
+	<a href="#"><img src="images/image002.png" width="200" height="75" ></a>	&nbsp;&nbsp;&nbsp;
+	<a href="#"><img src="images/image003.png" width="200" height="75" ></a>	&nbsp;&nbsp;&nbsp;
+	<a href="#"><img src="images/image004.png" width="200" height="75" ></a>	<br><br><br>
+	<a href="#"><img src="images/image005.png" width="200" height="75" ></a>	&nbsp;&nbsp;&nbsp;
+	<a href="#"><img src="images/image006.png" width="200" height="75" ></a>	&nbsp;&nbsp;&nbsp;
+	<a href="#"><img src="images/image007.png" width="200" height="75" ></a>	&nbsp;&nbsp;&nbsp;
+	<a href="#"><img src="images/image008.png" width="200" height="75" ></a>	<br><br><br>
+	<a href="#"><img src="images/image009.png" width="200" height="75" ></a>	&nbsp;&nbsp;&nbsp;
+	<a href="#"><img src="images/image010.png" width="200" height="75" ></a>	
+	<!--<a href="#"><img src="images/image00.png" width="200" height="75" ></a>		&nbsp;&nbsp;&nbsp;-->
+	<!-- <a href="#"><img src="images/image00.png" width="200" height="75" ></a> -->
+>>>>>>> 38e6e8e799b37f0d488d05f54f2333f73bcb0051
 </div>
 </div>
 	</body>
