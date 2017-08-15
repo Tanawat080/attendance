@@ -11,7 +11,7 @@ if (!$_SESSION["uname"]){  //check session
 		<title>KSP CHECKING</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
 	</head>
@@ -45,31 +45,26 @@ if (!$_SESSION["uname"]){  //check session
         </table>
     </div> <!-- จบล็อคเอ้าท์ -->
 <br><br>
-<form method="post" action="confirmSubject.php">
-			<div class="col-xs-4">
-        <label for="ex3">รหัสวิชา</label>
-        <input class="form-control"  type="text" name="subjectID">
-				<label for="ex3">วิชา</label>
-				<input class="form-control"  type="text" name="subject">
-				<label for="ex3">ห้องเรียน</label>
-				<select class="form-control" name="class" style="width: 200px">
-					<option value="">เลือกห้องเรียน</option>
-						<?php
-							include ("connectDB.php");
-							$strSQL = mysqli_query($mysqli,"SELECT * FROM class");
-							//$objResult = mysqli_fetch_array($strSQL);
-									while($objResult = mysqli_fetch_array($strSQL)){
-						?>
-					<option value="<?php echo $objResult["class"];?>"><?php echo "ม.".$objResult["class"];?></option>
-			 <?php
-			 }
-			 ?>
-		 </select> <br>
-				<button type="submit" class="btn btn-default">ตกลง</button>
 
-			</div>
-</form>
+<form name="form1" method="post" action="subject_edit2.php?subjectID=<?php echo $_GET["subjectID"];?>&class=<?php echo $_GET["class"];?>" enctype="multipart/form-data">
+        <?php
+        include ("connectDB.php");
+        $strSQL = mysqli_query($mysqli,"SELECT * FROM subject WHERE subjectID='".$_GET["subjectID"]."' and class='".$_GET["class"]."'");
+        $objResult = mysqli_fetch_array($strSQL);
+        ?>
+        <div class="form-group">
+          <div class="col-xs-4">
+          <label for="idPD">รหัสวิชา : </label>
+          <input class="form-control"  type="text" name="subjectID" value="<?php echo $objResult["subjectID"];?>">
+          <label for="idPD">วิชา : </label>
+          <input class="form-control"  type="text" name="subject" value="<?php echo $objResult["subject"];?>">
+          <label for="idPD">ห้อง : </label>
+          <input class="form-control"  type="text" name="class" value="<?php echo $objResult["class"];?>">
+          <br>
+          <button type="submit" class="btn btn-default">บันทึก</button>
+        </div>
 
+        </div>
 	</body>
 
 </html>

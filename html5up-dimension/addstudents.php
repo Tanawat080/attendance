@@ -13,6 +13,7 @@ if (!$_SESSION["uname"]){  //check session
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+
 	</head>
 	<style>
 	div.abcd{
@@ -42,28 +43,39 @@ if (!$_SESSION["uname"]){  //check session
     			<a href="logout.php"><font color="#CC0000">ออกจากระบบ</font></a></center>
         </td>
         </table>
+				<hr>
     </div> <!-- จบล็อคเอ้าท์ -->
-<br><br>
-	<center>
-		<!-- <img src="images/ksp1.png"> -->
-		<h2> KSP Checking </h2>
-		<h3>อาจารย์ที่ปรึกษา</h3>
-		<hr><br>
-		<div class="im">
-	<a href="checkattendance.php" ><img src="images/pic01.jpg" width="200" height="75"  ></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	<br><br>
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	<br><br>
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
-	<a href="google.com"><img src="#" width="200" height="75" border='1'></a>
-</div>
-</div>
+		<div align="right">
+			<a href="teacherpage.php"><button type="button" class="btn btn-primary"><font color="#000000">หน้าหลัก</font></button></a>	&nbsp;
+		</div>
+<br>
+<form method="post" action="confirmAddStudents.php?subjectID=<?php echo $_GET['subjectID']."&class=".$_GET['class'];?>">
+
+	<div class="container1" >
+<div class="col-xs-4" >
+        <label for="ex3">รหัสนักเรียน</label>
+        <input class="form-control"  type="text" name="studentID">
+
+				<label for="ex3">ชื่อ</label>
+				<input class="form-control"  type="text" name="studentName">
+				<label for="ex3">นามสกุล</label>
+				<input class="form-control"  type="text" name="studentLastname">
+				<label for="ex3">เบอร์โทรศัพท์</label>
+				<input class="form-control"  type="text" name="studentPhonenumber">
+						<?php
+							include ("connectDB.php");
+							$strSQL = mysqli_query($mysqli,"SELECT * FROM class where class='".$_GET['class']."'");
+							$objResult = mysqli_fetch_array($strSQL);
+			 			?>
+						<input class="form-control"  type="hidden" name="classID" value="<?php echo $objResult['classID']; ?>">
+		 <br>
+<button type="submit" class="btn btn-success"><font color="#000000">เพิ่ม</font></button>
+
+			</div>
+
+		</div>
+</form>
+
 	</body>
 
 </html>

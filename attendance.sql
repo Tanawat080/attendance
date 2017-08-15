@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 10, 2017 at 11:10 AM
+-- Generation Time: Aug 15, 2017 at 07:34 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -29,11 +29,22 @@ SET time_zone = "+00:00";
 CREATE TABLE `checkattendance` (
   `checkAttendanceID` int(11) NOT NULL,
   `studentID` varchar(255) NOT NULL,
+  `subjectID` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `typeAttendanceID` int(11) NOT NULL,
   `attendanceDate` date NOT NULL,
   `attendanceTime` time NOT NULL,
-  `attendanceNote` varchar(255) NOT NULL
+  `attendanceNote` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `teacherID` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `checkattendance`
+--
+
+INSERT INTO `checkattendance` (`checkAttendanceID`, `studentID`, `subjectID`, `typeAttendanceID`, `attendanceDate`, `attendanceTime`, `attendanceNote`, `teacherID`) VALUES
+(50018, '06222', 'ท31101', 10002, '2017-08-15', '13:46:40', 'a', 40001),
+(50017, '06215', 'ท31101', 10001, '2017-08-15', '13:41:57', 'a', 40001),
+(50016, '06212', 'ท31101', 10001, '2017-08-15', '13:41:57', 'a', 40001);
 
 -- --------------------------------------------------------
 
@@ -113,6 +124,17 @@ CREATE TABLE `student` (
   `classID` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`studentID`, `studentName`, `studentLastname`, `studentPhonenumber`, `classID`) VALUES
+('06215', 'ธนวัฒน์', 'มีชัย', '0810851004', 601),
+('06212', 'ศรัณยู', 'พรมแสงรัตน์', '0987654321', 601),
+('06219', 'ศรัณยู', 'พรมแสงรัตน์', '0987654321', 602),
+('06222', 'เอ', 'บี', '0987654321', 303),
+('06666', 'ซี', 'ดี', '0963926352', 103);
+
 -- --------------------------------------------------------
 
 --
@@ -122,8 +144,19 @@ CREATE TABLE `student` (
 CREATE TABLE `subject` (
   `subjectID` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `subject` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `teacherID` int(11) NOT NULL
+  `class` varchar(11) NOT NULL,
+  `teacherID` int(11) NOT NULL,
+  `update` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `subject`
+--
+
+INSERT INTO `subject` (`subjectID`, `subject`, `class`, `teacherID`, `update`) VALUES
+('ท31101', 'ภาษาไทย', '1/12', 40001, '2017-08-15 14:08:37'),
+('ท31101', 'ภาษาไทย', '1/12', 40001, '2017-08-15 14:08:37'),
+('อ31101', 'ภาษาอังกฤษ', '6/1', 40001, '2017-08-15 13:42:35');
 
 -- --------------------------------------------------------
 
@@ -229,12 +262,6 @@ ALTER TABLE `student`
   ADD PRIMARY KEY (`studentID`);
 
 --
--- Indexes for table `subject`
---
-ALTER TABLE `subject`
-  ADD PRIMARY KEY (`subjectID`);
-
---
 -- Indexes for table `teacher`
 --
 ALTER TABLE `teacher`
@@ -266,7 +293,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `checkattendance`
 --
 ALTER TABLE `checkattendance`
-  MODIFY `checkAttendanceID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `checkAttendanceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50019;
 --
 -- AUTO_INCREMENT for table `checkinout`
 --
