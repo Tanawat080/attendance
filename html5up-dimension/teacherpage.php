@@ -50,6 +50,7 @@ if (!$_SESSION["uname"]){  //check session
 		<h3>อาจารย์ที่ปรึกษา</h3>
 		<hr><br>
 		<div class="im">
+<<<<<<< HEAD
 		<a href="#" ><img src="images/image001.png" width="200" height="75"  ></a>	&nbsp;&nbsp;&nbsp;
 		<a href="#"><img src="images/image002.png" width="200" height="75" ></a>	&nbsp;&nbsp;&nbsp;
 		<a href="#"><img src="images/image003.png" width="200" height="75" ></a>	&nbsp;&nbsp;&nbsp;
@@ -60,6 +61,20 @@ if (!$_SESSION["uname"]){  //check session
 		<a href="#"><img src="images/image008.png" width="200" height="75" ></a>	<br><br><br>
 		<a href="checkattendance.php"><img src="images/image009.png" width="200" height="75" ></a>	&nbsp;&nbsp;&nbsp;
 		<a href="viewReport.php"><img src="images/image010.png" width="200" height="75" ></a>
+=======
+	<a href="checkattendance.php" ><img src="images/pic01.jpg" width="200" height="75"  ></a>	&nbsp;&nbsp;&nbsp;
+	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
+	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
+	<a href="#"><img src="#" width="200" height="75" border='1'></a>	<br><br>
+	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
+	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
+	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
+	<a href="#"><img src="#" width="200" height="75" border='1'></a>	<br><br>
+	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
+	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
+	<a href="#"><img src="#" width="200" height="75" border='1'></a>	&nbsp;&nbsp;&nbsp;
+	<a href="google.com"><img src="#" width="200" height="75" border='1'></a>
+>>>>>>> parent of 68161c6... no message
 </div>
 </div>
 	</body>
