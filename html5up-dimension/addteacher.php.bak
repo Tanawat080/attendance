@@ -16,7 +16,7 @@ $pass = '';
 $db = 'attendance';
 $mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
 
-/* query */
+/* Your query */
 $result = $mysqli->query("SELECT * FROM `class` WHERE class;") or die($mysqli->error);
 ?>
 

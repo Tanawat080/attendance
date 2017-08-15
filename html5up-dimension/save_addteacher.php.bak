@@ -58,7 +58,7 @@
 		$objQuery = mysqli_query($mysqli,$strSQL);
         
 		
-		//echo $strSQL;
+		echo $strSQL;
 		echo "<table>";
 		echo "<br><br><br>";
 		echo "ลงทะเบียนเสร็จสมบูรณ์!<br>";		
