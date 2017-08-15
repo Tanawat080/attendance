@@ -57,9 +57,6 @@ if (!$_SESSION["uname"]){  //check session
 	<tr>
 		<td width="100" align="center" bgcolor="#CCCCCC"><strong><font color='#003366'>รหัสวิชา</font></strong></td>
 		<td width="200"align="center" bgcolor="#CCCCCC"><strong><font color='#003366'>วิชา (ห้อง)</font></strong></td>
-		<td width="100" align="center" bgcolor="#CCCCCC"><strong><font color='#003366'>เช็คชื่อ</font></strong></td>
-		<td width="100" align="center" bgcolor="#CCCCCC"><strong><font color='#003366'>แก้ไข</font></strong></td>
-		<td width="100" align="center" bgcolor="#CCCCCC"><strong><font color='#003366'>ลบ</font></strong></td>
 		<td width="200" align="center" bgcolor="#CCCCCC"><strong><font color='#003366'>อัพเดทล่าสุด</font></strong></td>
 </tr>
 <?php
@@ -73,11 +70,8 @@ $result = mysqli_query($mysqli, $strSLQ2);  //เรียกข้อมูล�
 while($row = mysqli_fetch_array($result))
 {
 echo "<tr class='active'>";
-echo "<td align='center'><font color='#003366'>" . $row["subjectID"] . "</font></td>";
+echo "<td align='center'><font color='#003366'><a href='showAttendance_current.php?subjectID=".$row["subjectID"]."&class=".$row['class']."'>" . $row["subjectID"] . "</a></font></td>";
 echo "<td align='center'><font color='#003366'>" . $row["subject"] ."&nbsp" .$row['class']. "</font></td>";
-echo "<td align='center'><a href='checkattendance_check.php?subjectID=$row[subjectID]&class=$row[class]'><font color='#009900'>คลิก</font></a></td>";
-echo "<td align='center'><a href='subject_edit.php?subjectID=$row[subjectID]&class=$row[class]'><font color='#FF3300'>คลิก</font></a></td>";
-echo "<td align='center'><a href='subject_delete.php?subjectID=$row[subjectID]&class=$row[class]'><font color='#CC0000'>คลิก</font></a></td>";
 echo "<td align='center'><font color='#CC0000'>" . $row["update"] . "</font></td>";
 echo "</tr>";
 }
