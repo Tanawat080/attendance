@@ -31,7 +31,7 @@ session_start();
                         Header("Location: teacherpage.php");
 
                       }
-                      if ($_SESSION["typeUser"]=="ผู้บริหาร"){  //ถ้าเป็น ผู้อำนวยการ ให้กระโดดไปหน้า user_page.php
+                      if ($_SESSION["typeUser"]=="ผู้อำนวยการ"){  //ถ้าเป็น ผู้อำนวยการ ให้กระโดดไปหน้า user_page.php
 
                         Header("Location: ceopage.php");
 
